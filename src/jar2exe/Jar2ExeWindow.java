@@ -6,7 +6,7 @@
  * The modules are developed in NSIS by me
  */
 
-package featurea.tools.jar2exe;
+package jar2exe;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +15,6 @@ import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JRootPane;
 
 public class Jar2ExeWindow extends JFrame implements ActionListener {
 

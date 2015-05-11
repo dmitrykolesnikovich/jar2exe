@@ -1,4 +1,4 @@
-package featurea.tools.jar2exe;
+package jar2exe;
 
 import javax.swing.filechooser.FileFilter;
 import java.io.File;

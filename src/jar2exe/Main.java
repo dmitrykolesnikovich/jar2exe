@@ -1,6 +1,6 @@
-package featurea.tools.jar2exe;
+package jar2exe;
 
-public class Starter {
+public class Main {
 
   public static void main(String[] args){
     new Jar2ExeWindow();
