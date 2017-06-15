@@ -5,18 +5,62 @@
 	<groupId>featurea</groupId>
     <artifactId>jar2exe</artifactId>
     <version>1</version>
-    <packaging>pom</packaging>
-
-    <parent>
-        <groupId>featurea</groupId>
-        <artifactId>featurea</artifactId>
-        <version>1</version>
-        <relativePath>../../pom.xml</relativePath>
-    </parent>
+    <packaging>pom</packaging>   
 
     <modules>
         <module>featurea-jar2exe</module>
         <module>featurea-jar2exe-maven-plugin</module>
     </modules>    
+	
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+	
+	 <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <testSource>1.8</testSource>
+                        <testTarget>1.8</testTarget>
+                        <generatedSourcesDirectory>target/generated-sources/java</generatedSourcesDirectory>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>mojo-descriptor</id>
+                            <goals>
+                                <goal>descriptor</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>help-goal</id>
+                            <goals>
+                                <goal>helpmojo</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
